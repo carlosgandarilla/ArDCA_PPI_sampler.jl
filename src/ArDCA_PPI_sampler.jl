@@ -4,7 +4,7 @@ module ArDCA_PPI_sampler
 	#--------------------------------------------------------------------------------------
 	#import	
 	
-	import ArDCA: ardca, ArNet, sample_with_weights, sample_subsequence, permuterow!, wsample
+	#import ArDCA: ardca, ArNet, sample_with_weights, sample_subsequence, permuterow!, wsample
 	import ExtractMacro: @extract
 	import DCAUtils: read_fasta_alignment, compute_weighted_frequencies, compute_weights, add_pseudocount
 	import LoopVectorization: @turbo
