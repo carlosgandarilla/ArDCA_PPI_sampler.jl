@@ -1,14 +1,10 @@
 using ArDCA_PPI_sampler
 using Test
 
-@testset "MyJuliaPackage Tests" begin
-    @test true  # Placeholder test to ensure test suite runs
-end
-
 @testset "Testing ArDCA_PPI_sampler" begin
 
     # Define input data
-    inputfastafile = "./data/HKa-RRa_for_arDCA.fasta"
+    inputfastafile = "./data/HK-RR_co-MSA.fasta"
     
     # Test one-to-one sampling (check if it runs without errors)
     try
@@ -68,19 +64,43 @@ end
         @test true   # If no error occurs, this test passes
     catch e
         @test false  # If an error occurs, this test fails
+    end    
+
+    # Test Hamming distance histogram figure (check if it runs without errors)
+    try
+        inputsample = "./data/HK-RR_ArDCA_Natural_1to1_M=10000.h5"
+        figoutput = "./HK-RR_ArDCA_Natural_1to1"
+        dij_hist_generative(inputsample, figoutput, binsA=80, binsB=80, binsC=120, y_max = 20.0)
+        @test true   # If no error occurs, this test passes
+    catch e
+        @test false  # If an error occurs, this test fails
+    end   
+
+    # Test one-point frequenties 'fi(a)' comparison between natural and sampled sequences
+    try
+        inputsample = "./data/HK-RR_ArDCA_Natural_1to1_M=10000.h5"
+        figoutput = "./HK-RR_ArDCA_Natural_1to1"
+        fi_fig_generative(inputfastafile, inputsample, figoutput)
+        @test true   # If no error occurs, this test passes
+    catch e
+        @test false  # If an error occurs, this test fails
+    end 
+
+    # Test two-point correlations 'Cij(a,b)' comparison between natural and sampled sequences
+    try
+        inputsample = "./data/HK-RR_ArDCA_Natural_1to1_M=10000.h5"
+        figoutput = "./HK-RR_ArDCA_Natural_1to1"
+        Cij_fig_generative(inputfastafile, inputsample, figoutput)
+        @test true   # If no error occurs, this test passes
+    catch e
+        @test false  # If an error occurs, this test fails
     end
 
-
-
-
-
-
-
-    
-
-    # Test for save_hdf5 (check if it runs without errors)
+    # Test three-point correlations 'Cijk(a,b,c)' comparison between natural and sampled sequences
     try
-        save_hdf5([1, 2, 3, 4, 5], "test_data.h5")
+        inputsample = "./data/HK-RR_ArDCA_Natural_1to1_M=10000.h5"
+        figoutput = "./HK-RR_ArDCA_Natural_1to1"
+        Cijk_fig_generative(inputfastafile, inputsample, figoutput)
         @test true   # If no error occurs, this test passes
     catch e
         @test false  # If an error occurs, this test fails
