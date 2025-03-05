@@ -2,3 +2,17 @@ name = "ArDCA_PPI_sampler"
 uuid = "8599883a-6c2a-42a6-acd1-c8a27c9b47c5"  # Generate a real UUID
 authors = ["Carlos Gandarilla-Perez <carlosgandarilla88@gmail.com>", "Lisa Gennai <lisa.gennai@epfl.ch>", "Martin Weigt <martin.weigt@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+ArDCA = "fc7e833f-a3b9-439d-ae82-c6ad11a3e54b"
+ExtractMacro = "f86d3d12-fd5b-522c-99e9-61577282a1e9"
+DCAUtils = "e41cd558-3099-4f6e-a65d-5336857e40aa"
+LoopVectorization = "bdcacae8-1622-11e9-2a5c-532679323890"
+HDF5 = "f67ccb44-e63f-5c2f-98bd-6dc0ccc4ba2f"
+CurveFit = "5a033b19-8c74-5913-a970-47c3779ef25c"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+Distances = "b4f34e82-e78d-54a5-968a-f98e89d6e8f7"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+
