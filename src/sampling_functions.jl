@@ -455,7 +455,7 @@ The keyword arguments for the sampling method with their default value:
 Example of use:
 
 inputfastafile = "./data/HKa-RRa_for_arDCA.fasta"
-outputfastafile = "./data/HHK-RR_ArDCA_2to2_Posisson_mu=2_M=10000.h5"
+outputfastafile = "./data/HHK-RR_ArDCA_2to2_M=10000.h5"
 
 sampling_many2many_known(inputfastafile, outputfastafile, 10000, 64, 2)
 """
