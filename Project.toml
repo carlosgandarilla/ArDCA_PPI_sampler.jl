@@ -1,4 +1,4 @@
 name = "ArDCA_PPI_sampler"
-uuid = "fff807a9-dd8f-4d40-b6bf-33d811b54174"  # Generate a real UUID
-authors = ["Carlos Gandarilla-Pérez <carlosgandarilla88@gmail.com>", "Lisa Gennai <lisa.gennai@epfl.ch>", "Martin Weigt <martin.weigt@gmail.com>"]
+uuid = "8599883a-6c2a-42a6-acd1-c8a27c9b47c5"  # Generate a real UUID
+authors = ["Carlos Gandarilla-Perez <carlosgandarilla88@gmail.com>", "Lisa Gennai <lisa.gennai@epfl.ch>", "Martin Weigt <martin.weigt@gmail.com>"]
 version = "0.1.0"
