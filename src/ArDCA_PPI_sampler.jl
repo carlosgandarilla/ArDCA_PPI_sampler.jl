@@ -1,5 +1,5 @@
 #begin of module
-module ArDCAPPIsampler
+module ArDCA_PPI_sampler
 
 	#--------------------------------------------------------------------------------------
 	#import	
