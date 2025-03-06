@@ -4,7 +4,7 @@
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-	'sampling_one2one' 
+	sampling_one2one(inputfastafile::String, outputfastafile::String, M::Int64, La::Int64; kwds...) -> (Matrix{Int64}) 
 Generates one-to-one samples using ArDCA models from natural one-to-one interacting sequences.
 It returns the generated samples in 𝐿×𝑀 matrix of integer and saves them in a H5DF file.
 
@@ -70,7 +70,7 @@ end
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-	'sampling_one2many_known' 
+	sampling_one2many_known(inputfastafile::String, outputfastafile::String, Ma::Int64, La::Int64, λ::Int64; kwds...) -> (Matrix{Int64})
 Generates one-to-many samples using ArDCA models from natural one-to-one interacting sequences. For each family A
 sequence, there are λ interacting partners from family B. It returns the generated samples in 𝐿×𝑀b matrix of 
 integer, where 𝑀b = λ×𝑀a and Ma is the number of sampled A sequences. Generated MSAs are saved in a H5DF file.
@@ -155,7 +155,7 @@ end
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-	'sampling_one2many_unknown' 
+	sampling_one2many_unknown(inputfastafile::String, outputfastafile::String, Ma::Int64, La::Int64, λ::Int64; kwds...) -> (Matrix{Int64})
 Generates one-to-many samples using ArDCA models from natural one-to-one interacting sequences. For each family A 
 sequence, there are λi interacting partners from family B, λi is sampled from a Poisson distribution with mean λ. 
 It returns the generated samples in 𝐿×𝑀 matrix of integer, where 𝑀 is the number of sampled sequences. Generated 
@@ -250,7 +250,7 @@ end
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-	'sampling_many2one_known' 
+	sampling_many2one_known(inputfastafile::String, outputfastafile::String, Mb::Int64, Lb::Int64, λ::Int64; kwds...) -> (Matrix{Int64})
 Generates many-to-one samples using ArDCA models from natural one-to-one interacting sequences. For each family 
 B sequence, there are λ interacting partners from family A. It returns the generated samples in 𝐿×𝑀a matrix of 
 integer, where 𝑀a = λ×𝑀b and Mb is the number of sampled B sequences. Generated MSAs are saved in a H5DF file:
@@ -337,7 +337,7 @@ end
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-    'sampling_many2one_unknown' 
+    sampling_many2one_unknown(inputfastafile::String, outputfastafile::String, Mb::Int64, Lb::Int64, λ::Int64; kwds...) -> (Matrix{Int64})
 Generates many-to-one samples using ArDCA models from natural one-to-one interacting sequences.
 For each family B sequence, there are λi interacting partners from family A, λi is sampled from
 a Poisson distribution with mean λ. It returns the generated samples in 𝐿×𝑀 matrix of integer, 
@@ -433,7 +433,7 @@ end
 #---------------------------------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------------------------------
 """
-    'sampling_many2many_unknown' 
+    sampling_many2many_unknown(inputfastafile::String, outputfastafile::String, Ma::Int64, La::Int64, λ::Int64; kwds...) -> (Matrix{Int64})
 Generates many-to-many samples using ArDCA models from natural one-to-one interacting sequences.
 For each family A sequence, there are λ interacting partners from family B. Then, from these λ 
 related B sequences, we sample λ sequences from family A. It returns the generated samples in 
