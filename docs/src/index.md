@@ -57,10 +57,38 @@ $ julia -t nthreads # put here nthreads equal to the number of cores you want to
 
 More information [here](https://docs.julialang.org/en/v1.6/manual/multi-threading/)
 
-## [Methods Reference](@id index)
-```@index
-```
+## Reference
 
-```@autodocs
-Modules = [ArDCA]
-``````
+```@docs
+sampling_one2one
+```
+```@docs
+sampling_one2many_known
+```
+```@docs
+sampling_one2many_unknown
+```
+```@docs
+sampling_many2one_known
+```
+```@docs
+sampling_many2one_unknown
+```
+```@docs
+sampling_many2many_known
+```
+```@docs
+computeCijk
+```
+```@docs
+dij_hist_generative
+```
+```@docs
+Cijk_fig_generative
+```
+```@docs
+Cij_fig_generative
+```
+```@docs
+fi_fig_generative
+```
