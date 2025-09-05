@@ -81,15 +81,14 @@ mm = generate_many_to_many(m, g; out="results/many_to_many/")
 ArDCA models a protein sequence $\mathbf{a}=(a_1,\dots,a_L)$ with an autoregressive factorization:
 
 $$
-P(\mathbf{a})=\prod_{i=1}^{L} P\!\big(a_i \mid a_1,\ldots,a_{i-1}\big).
+P(\mathbf{a})=\prod\limits_{i=1}^{L} P\big(a_i \mid a_{i-1},\ldots, a_1\big).
 $$
 
 Each conditional is parameterized in softmax form:
 
 $$
-P\!\big(a_i \mid a_1,\ldots,a_{i-1}\big)=
-\frac{\exp\!\left\{h_i(a_i)+\sum_{j=1}^{i-1}J_{ij}\!\big(a_i,a_j\big)\right\}}
-     {Z_i\!\big(a_1,\ldots,a_{i-1}\big)}.
+P\big(a_i \mid a_{i-1},\ldots, a_1\big)=
+\frac{\exp\left\{h_i(a_i) + \sum\limits_{j=1}^{i-1} J_{ij}\big(a_i,a_j\big)\right\}}{Z_i\big(a_1,\ldots,a_{i-1}\big)}.
 $$
 
 For interacting families $A$ and $B$, we generate partners by conditioning:
