@@ -88,7 +88,7 @@ Each conditional is parameterized in softmax form:
 
 $$
 P\big(a_i \mid a_{i-1},\ldots, a_1\big)=
-\frac{\exp \left{ h_i(a_i) + \sum\limits_{j=1}^{i-1} J_{ij}\big(a_i,a_j\big) \right} }{Z_i\big(a_1,\ldots,a_{i-1}\big)}.
+\frac{\exp \left[ h_i(a_i) + \sum\limits_{j=1}^{i-1} J_{ij}\big(a_i,a_j\big) \right] }{Z_i\big(a_1,\ldots,a_{i-1}\big)}.
 $$
 
 For interacting families $A$ and $B$, we generate partners by conditioning:
