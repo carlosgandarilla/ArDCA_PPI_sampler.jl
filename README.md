@@ -47,7 +47,8 @@ Annotated datasets for **interacting paralogs** are scarce; for **promiscuous** 
 ```bash
 git clone https://github.com/<user>/<repo>.git
 cd <repo>
-julia --project -e 'using Pkg; Pkg.instantiate()'
+julia --project -e 'using Pkg; Pkg.instantiate()
+```
 
 ---
 
@@ -58,16 +59,19 @@ julia --project -e 'using Pkg; Pkg.instantiate()'
 using ProjectName  # replace with your module name
 
 m = fit_ardca("data/msa_A.fasta", "data/msa_B.fasta"; order=:natural)  # or :entropic
-pairs = generate_pairs(m; N=4000, out="results/pairs_one_to_one.fasta")'
+pairs = generate_pairs(m; N=4000, out="results/pairs_one_to_one.fasta")
+```
 
 ### 2) Generate one-to-many with Poisson multiplicity
 ```julia
-ds = generate_one_to_many(m; N_A=2000, lambda=2.0, out="results/one_to_many/")'
+ds = generate_one_to_many(m; N_A=2000, lambda=2.0, out="results/one_to_many/")
+```
 
 ### 3) Generate many-to-many on a specified bipartite graph
 ```julia
 g  = load_graph("configs/graph.toml")   # degrees, connected components
-mm = generate_many_to_many(m, g; out="results/many_to_many/")'
+mm = generate_many_to_many(m, g; out="results/many_to_many/")
+```
 
 ---
 
