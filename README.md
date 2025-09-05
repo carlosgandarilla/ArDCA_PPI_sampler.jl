@@ -79,11 +79,13 @@ mm = generate_many_to_many(m, g; out="results/many_to_many/")
 
 ### ArDCA: conditional partner generation
 ArDCA models a protein sequence $\mathbf{a}=(a_1,\dots,a_L)$ with an autoregressive factorization:
+
 $$
 P(\mathbf{a})=\prod_{i=1}^{L} P\!\big(a_i \mid a_1,\ldots,a_{i-1}\big).
 $$
 
 Each conditional is parameterized in softmax form:
+
 $$
 P\!\big(a_i \mid a_1,\ldots,a_{i-1}\big)=
 \frac{\exp\!\left\{h_i(a_i)+\sum_{j=1}^{i-1}J_{ij}\!\big(a_i,a_j\big)\right\}}
@@ -91,11 +93,14 @@ P\!\big(a_i \mid a_1,\ldots,a_{i-1}\big)=
 $$
 
 For interacting families $A$ and $B$, we generate partners by conditioning:
+
 $$
 P(\mathbf{a},\mathbf{b})=P(\mathbf{a})\,P(\mathbf{b}\mid \mathbf{a}),\qquad
 P(\mathbf{b}\mid \mathbf{a})=\prod_{i=1}^{L_B} P\!\big(b_i \mid b_1,\ldots,b_{i-1},\mathbf{a}\big),
 $$
+
 with cross-family couplings:
+
 $$
 P\!\big(b_i \mid b_1,\ldots,b_{i-1},\mathbf{a}\big)=
 \frac{\exp\!\left\{h_i(b_i)+\sum_{j=1}^{i-1}J_{ij}\!\big(b_i,b_j\big)+\sum_{k=1}^{L_A} L_{ik}\!\big(b_i,a_k\big)\right\}}
@@ -110,9 +115,11 @@ $$
 - **One-to-many**: for each $\mathbf{a}^m$, sample $c_m$ partners in $B$.
   - Known multiplicity: fixed $c_m$.
   - Unknown multiplicity: draw $c_m$ from
+
     $$
     P(c_m)=\frac{\lambda^{c_m}e^{-\lambda}}{c_m!}.
     $$
+
 - **Many-to-one**: generate one $\mathbf{b}$ conditioned on multiple $\{\mathbf{a}_\alpha\}$.
   - Either average encodings of the $\mathbf{a}_\alpha$ (simpler), or concatenate them (stronger, may need per-$M$ models).
 - **Many-to-many**: define a bipartite interaction graph (node degrees), then alternate conditional sampling until the component is filled.
