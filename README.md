@@ -94,16 +94,16 @@ $$
 For interacting families $A$ and $B$, we generate partners by conditioning:
 
 $$
-P(\mathbf{a},\mathbf{b})=P(\mathbf{a})\,P(\mathbf{b}\mid \mathbf{a}),\qquad
+P(\mathbf{a},\mathbf{b})=P(\mathbf{a}) P(\mathbf{b}\mid \mathbf{a}),\qquad
 P(\mathbf{b}\mid \mathbf{a})=\prod_{i=1}^{L_B} P\big(b_i \mid b_{i-1},\ldots, b_1, \mathbf{a}\big),
 $$
 
 with cross-family couplings:
 
 $$
-P\!\big(b_i \mid b_1,\ldots,b_{i-1},\mathbf{a}\big)=
-\frac{\exp\!\left\{h_i(b_i)+\sum_{j=1}^{i-1}J_{ij}\!\big(b_i,b_j\big)+\sum_{k=1}^{L_A} L_{ik}\!\big(b_i,a_k\big)\right\}}
-     {Z_i\!\big(b_1,\ldots,b_{i-1},\mathbf{a}\big)}.
+P\big(b_i \mid b_1,\ldots,b_{i-1},\mathbf{a}\big)=
+\frac{\exp \left[h_i(b_i) + \sum_{j=1}^{i-1}J_{ij}\big(b_i,b_j\big) + \sum_{k=1}^{L_A} L_{ik}\big(b_i,a_k\big)\right]}
+     {Z_i\big(b_1,\ldots,b_{i-1},\mathbf{a}\big)}.
 $$
 
 **Notes**
